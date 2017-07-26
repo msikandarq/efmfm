@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jdbc 
+                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/aop 
+      					   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+ <aop:aspectj-autoproxy />
+	<context:component-scan
+		base-package="com.newtglobal.eFmFmFleet.business.dao,com.newtglobal.eFmFmFleet.business.dao.daoImpl,com.newtglobal.eFmFmFleet.business.bo,com.newtglobal.eFmFmFleet.business.bo.boImpl,com.newtglobal.eFmFmFleet.model,com.newtglobal.eFmFmFleet.services" />
+	 <tx:annotation-driven />
+
+	<import resource="data-source.xml" />
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+		p:entityManagerFactory-ref="entityManagerFactory" />	
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="persistenceUnitName" value="EfmfmPersistenceUnit"></property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="database" value="MYSQL" />
+			</bean>
+		</property>
+	</bean>
+
+<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>/properties/SystemParameters</value>
+				<value>/properties/</value>
+				<value>/properties/Constants</value>	
+			    <value>/properties/client_secrets</value>	
+			</list>
+		</property>
+	</bean>
+</beans>

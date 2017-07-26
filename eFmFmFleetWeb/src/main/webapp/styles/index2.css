@@ -1,0 +1,246 @@
+body.modal-open {
+    overflow:visible;
+}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+.errorTemplateStyle { background-color: whitesmoke;}
+.incorrectPassword{
+    color:#F90000;
+    font-style: italic;
+    font-size:12px;
+    margin-top:-15px;
+}
+.indexPageTemplate {
+    background-color: #fff;
+}
+.topBanner{
+    height:50px;
+    background-color: #fff;
+    color:blue;
+    -webkit-box-shadow: inset -3px -18px 37px -16px rgba(122,122,122,0.58);
+    -moz-box-shadow: inset -3px -18px 37px -16px rgba(122,122,122,0.58);
+    box-shadow: inset -3px -18px 37px -16px rgba(122,122,122,0.58);
+}
+.floatLeft{float: left;}
+.padding20{padding:20px;}
+.loginLink{
+    background-color: rgba(0, 0, 0, 0.54);
+    color:white;
+    width:100px;
+    height:20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-right:15px;
+    cursor: pointer;
+    border: solid 1px rgba(0, 0, 0, 0.65);
+}
+.loginLink:hover{
+    background-color: rgba(57, 57, 57, 0.54);
+}
+
+.imgBG{
+    background-color: #fff;
+    height: 400px;
+   -webkit-box-shadow: 5px 37px 77px -49px rgba(48,48,48,1);
+-moz-box-shadow: 5px 37px 77px -49px rgba(48,48,48,1);
+box-shadow: 5px 37px 77px -49px rgba(48,48,48,1);
+}
+
+.imgMain{
+    height:inherit;
+    background-size: cover;
+    background-color: black;
+    
+/*    background: url(../images/slide-3a.jpg) no-repeat;*/
+/*background-image: url("images/slide-3a.jpg")*/
+}
+
+.imgMain2{
+     height: 400px;
+     width: 100%;
+}
+
+.indexPageTemplate{
+/*    position:relative;*/
+}
+
+.hidebutton{
+    display: none;
+}
+
+.loginModal{
+/*    position: absolute;*/
+    top:300px;
+    left:300px;
+}
+
+.formLogin{
+    padding-top:20px;
+}
+
+.userNameInput,
+.passwordInput{
+    width:85%;
+    border-radius: 0px;
+}
+
+.blueBtn{
+   color: white;
+   text-shadow: none;
+   background-color: #4d90fe;
+   border-radius: 0px;
+   width:200px;
+}
+
+.blueBtn:focus,
+.blueBtn:hover{
+   color: white;
+   text-shadow: none;
+   background-color: #4480e3;
+   border-radius: 0px;
+}
+
+.companyLogo{
+     display:block;
+    margin:auto;
+}
+
+.loginH2{
+      color: gold;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 26px;
+  text-decoration: none;
+    margin-bottom: 0px;
+}
+
+.iconIndex{
+    font-size: 22px;
+}
+    
+.moreDescriptionP{
+    margin-top:20px;
+}
+
+.moreDescription{
+/*    marin-top:20px;*/
+    padding-top: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 40px;
+}
+
+.moreDescription>div>img{
+    width:100%;
+}
+.moduleIndex{
+    height: 100%;
+}
+
+.empApp,
+.escortApp,
+.adminApp{
+    cursor:pointer;
+}
+
+.labelModuleIndexEmp,
+.labelModuleIndexEscort,
+.labelModuleIndexAdmin
+{
+    background: #fcfcfc;
+}
+
+.labelModuleIndex1{
+    padding-top:10px;
+    padding-bottom: 0px;
+    padding-right:10px;
+    padding-left:10px;
+    color: #000;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.labelModuleIndex2{
+    padding-top:0px;
+    padding-bottom: 10px;
+    padding-right:10px;
+    padding-left:10px;
+      color: #000;
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.footerIndex{
+    text-align: right;
+    color: #dee4eb;
+    font-size: 12px;
+    height: 40px;
+    background: #4a5866;
+    padding-right: 45px;
+    padding-top: 10px;
+}
+.mainDivForgetPassword{
+    margin-top: -10px;
+}
+.forgetPasswordLink{
+    font-style: italic;
+    color:blue;
+}
+.pointer{cursor: pointer;}
+.invalidPasswordHeader{
+    height: 30px;
+    background-color: #4D90FE;
+    color: white;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 10px;
+}
+.invalidText{font-size:15px;}
+.invalidButton{margin-top:20px;}
+
+.modalHeaderStyle
+{
+    padding: 0px !important;
+    border-bottom: 1px solid #f0ad4e;
+}
+
+.headerCloseModal
+{
+    margin: 15px !important;
+}
+
+.login-footer-style
+{
+    padding-bottom: 0px;
+}
+
+.login-footer
+{
+  background-color: #464645;
+  margin-right: -15px !important;
+  margin-left: 0px !important; 
+  color: white;
+  padding-top: 5px;
+}
+
+.login-footer-style
+{
+  color: #DBBC24;
+}
+.login-footer-style:hover
+{
+  color: #ecf04e;
+}
+.login-footer-style:active
+{
+  color: #ecf04e;
+}
+
+.bgContainerLogin
+{
+  background-image: url("../images/slider2-v1.jpg");
+}

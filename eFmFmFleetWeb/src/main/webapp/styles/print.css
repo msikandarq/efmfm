@@ -1,0 +1,15 @@
+  @media print {
+    body * {
+        visibility: visible;
+    }
+   table { page-break-inside:auto }
+   tr    { page-break-inside:avoid; page-break-after:auto }
+   th    { page-break-inside:avoid; page-break-after:auto }
+    }
+
+.printTab>tbody>tr>td, .printTab>tbody>tr>th, .printTab>tfoot>tr>td, .printTab>tfoot>tr>th, .printTab>thead>tr>td, .printTab>thead>tr>th {
+    border: 1.5px solid #080808 !important;
+}
+@page{
+	margin: 25px;
+}

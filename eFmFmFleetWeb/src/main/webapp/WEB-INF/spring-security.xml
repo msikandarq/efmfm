@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	<http auto-config="true">
+		<form-login login-page="/login" default-target-url="/home"
+			authentication-failure-handler-ref="AuthenticationFailureHandler"
+			authentication-success-handler-ref="myAuthenticationSuccessHandler" />
+		<logout invalidate-session="true" delete-cookies="JSESSIONID"
+			success-handler-ref="customLogoutFilter" />
+		<remember-me data-source-ref="DataSource" />
+		<access-denied-handler ref="customAccessDeniedHandler" />
+		<session-management invalid-session-url="/j_spring_security_logout" />
+	</http>
+	<!-- ClientId,RoleId -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<!-- <password-encoder hash="sha" /> -->
+			<password-encoder hash="bcrypt" />
+			<jdbc-user-service data-source-ref="DataSource"
+				users-by-username-query="
+				select userName,password,BranchId,FirstName,LastName,EmailId,Status from eFmFmUserMaster where userName=?"
+				authorities-by-username-query="
+				select su.userName,sr.Role from eFmFmUserMaster su, eFmFmRoleMaster sr ,eFmFmClientUserRole cr
+				     where su.userId =cr.userId and cr.roleId=sr.roleId and su.status='Y' and su.userName=? " />
+		</authentication-provider>
+	</authentication-manager>
+	<beans:bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<beans:property name="cacheSeconds" value="0" />
+	</beans:bean>
+	<beans:bean id="customLogoutFilter"
+		class="com.newtglobal.eFmFmFleet.web.CustomLogoutFilter" />
+	<beans:bean id="myAuthenticationSuccessHandler"
+		class="com.newtglobal.eFmFmFleet.web.MyAuthenticationSuccessHandler" />
+	<beans:bean id="AuthenticationFailureHandler"
+		class="com.newtglobal.eFmFmFleet.web.AuthenticationFailureHandler" />
+	<beans:bean id="customAccessDeniedHandler"
+		class="com.newtglobal.eFmFmFleet.web.AccessDeniedHandlerApp" />
+</beans:beans>

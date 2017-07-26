@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!-- This web.xml file is not required when using Servlet 3.0 container, 
+	see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html#d4e194 -->
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<welcome-file-list>
+		<welcome-file>/partials/index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/loginFailed</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/wrongattempt</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/inactive</url-pattern>
+	</servlet-mapping>	
+		<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/disable</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/lastattempt</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/logindenied</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/tempLogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/securityAccessDenied</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/comingsoon</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/userProfile</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/accessdenied</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/accessDeniedToeFmFmthroughSso</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/sessionExpier</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/alreadylogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/error404</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/error500</url-pattern>
+	</servlet-mapping>
+	<servlet>		  
+		<servlet-name>proxool</servlet-name>		  
+		<servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>		  
+		<servlet-name>proxool</servlet-name>		  
+		<url-pattern>/proxool</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.security.web.session.HttpSessionEventPublisher
+		</listener-class>
+	</listener>
+	<error-page>
+	    <error-code>404</error-code>
+	    <location>/partials/error404.jsp</location>
+	</error-page>
+	<error-page>
+	    <error-code>405</error-code>
+	    <location>/partials/error405.jsp</location>
+	</error-page>
+	<error-page>
+	    <error-code>500</error-code>
+	    <location>/partials/serverError500.jsp</location>
+	</error-page>
+	<error-page>
+	    <error-code>502</error-code>
+	    <location>/partials/serverError502.jsp</location>
+	</error-page>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/mvc-dispatcher-servlet.xml,
+			/WEB-INF/spring-database.xml,
+			/WEB-INF/spring-security.xml
+		</param-value>
+	</context-param>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/j_spring_security_check</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/j_spring_security_logout</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/home</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>efmfm-Services</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer
+		</servlet-class>
+		<async-supported>true</async-supported>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.newtglobal.eFmFmFleet.services.EnableMultipart
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>com.newtglobal.eFmFmFleet.services</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>efmfm-Services</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<session-config>
+    <cookie-config>
+        <http-only>true</http-only>
+        <secure>true</secure>
+    </cookie-config>
+      <tracking-mode>COOKIE</tracking-mode>
+</session-config>
+</web-app>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JS-XLSX Live Demo</title>
+<style>
+
+</style>
+</head>
+<body>
+
+<select name="format">
+<option value="csv" selected> CSV</option>
+</select>
+
+<div id="drop"></div>
+<p><input type="file" name="xlfile" id="xlf" /></p>
+<input type="checkbox" name="useworker" checked><br />
+<input type="checkbox" name="xferable" checked><br />
+<input type="checkbox" name="userabs" checked><br />
+<pre id="out"></pre>
+
+<script src="shim.js"></script>
+<script src="jszip.js"></script>
+<script src="xlsx.js"></script>
+<script src="ods.js"></script>
+<script src="fileValidation.js"></script>
+</body>
+</html>

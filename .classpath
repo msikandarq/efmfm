@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="eFmFmFleetBusiness/src/main/java"/>
+	<classpathentry kind="src" path="eFmFmFleetBusiness/src/test/java"/>
+	<classpathentry kind="src" path="eFmFmFleetCore/src/main/java"/>
+	<classpathentry kind="src" path="eFmFmFleetModel/src/main/java"/>
+	<classpathentry kind="src" path="eFmFmFleetModel/src/test/java"/>
+	<classpathentry kind="src" path="eFmFmFleetWeb/src/main/java"/>
+	<classpathentry kind="src" path="eFmFmSchedular/src/main/java"/>
+	<classpathentry kind="src" path="eFmFmSchedular/src/test/java"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

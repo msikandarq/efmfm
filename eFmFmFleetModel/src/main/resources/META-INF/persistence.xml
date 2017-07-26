@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="EfmfmPersistenceUnit">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.newtglobal.eFmFmFleet.model.PersistentLoginPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmAlertTxnPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmAlertTypeMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmAreaMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmAssignRoutePO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmRouteAreaMappingPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientRouteMappingPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientUserRolePO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmDriverFeedbackPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmDriverMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeTravelRequestPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEscortMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmRoleMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmZoneMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmUserMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmDeviceMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVehicleCheckInPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVehicleMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVendorMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmActualRoutTravelledPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmTripTimingMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeRequestMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeTripDetailPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEscortCheckInPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVendorContractTypeMasterPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVendorContractInvoicePO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmFixedDistanceContractDetailPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmTripBasedContractDetailPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmTripAlertsPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientProjectDetailsPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientBranchPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVehicleInspectionPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmAreaNodalMasterPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientBranchConfigurationPO</class>		
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientBranchConfigurationMappingPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmClientBranchSubConfigurationPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmUserPasswordPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmCheckInVehicleTrackingPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmFuelChargesPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVendorFuelContractTypeMasterPO</class>	
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmDriverDocsPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmVehicleDocsPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmEscortDocsPO</class>				
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmLiveRoutTravelledPO</class>	
+	    <class>com.newtglobal.eFmFmFleet.model.AreaEmpClusterMappingPO</class>	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmRoutingAreaPO</class>	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmAlgoRoutesPO</class>
+		<class>com.newtglobal.eFmFmFleet.model.EFmFmFieldAppConfigMasterPO</class>	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmSupervisorMasterPO</class>	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmLocationMasterPO</class>
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmSessionManagementPO</class>  
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeProjectDetailsPO</class>
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmDynamicVehicleCheckListPO</class>
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmSmsAlertMasterPO</class> 
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmMultipleLocationTvlReqPO</class>   
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmIndicationMasterPO</class> 	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmAdminCustomMessagePO</class>
+        <class>com.newtglobal.eFmFmFleet.model.EFmFmAdminSentSMSPO</class>   
+        <class>com.newtglobal.eFmFmFleet.model.EFmFmUserFacilityMappingPO</class> 	
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmFacilityToFacilityMappingPO</class> 
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmVehicleCapacityMasterPO</class> 
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeModuleMasterPO</class> 
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmEmployeeModuleMappingWithBranchPO</class> 
+	    <class>com.newtglobal.eFmFmFleet.model.EFmFmClientAreaMappingPO</class> 	    	    
+		<exclude-unlisted-classes />
+		<shared-cache-mode>ALL</shared-cache-mode>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.connection.useUnicode" value="true" />
+			<property name="hibernate.connection.characterEncoding"
+				value="UTF-8" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+			<property name="hibernate.cache.region.factory_class"
+				value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+			<property name="hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="true" />
+			<property name="openjpa.DataCache" value="true" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+			<property name="hibernate.cache.provider_configuration_file_resource_path"
+				value="ehcache.xml" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,89 @@
+
+.animate-enter, 
+.animate-leave { 
+    -webkit-transition: 975ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 975ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 975ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 975ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 975ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+} 
+ 
+.animate-leave.animate-leave-active,
+.animate-enter {
+    -webkit-transform: rotateX(90deg) rotateZ(90deg);
+    -moz-transform: rotateX(90deg) rotateZ(90deg);
+    -ms-transform: rotateX(90deg) rotateZ(90deg);
+    -o-transform: rotateX(90deg) rotateZ(90deg);
+    transform: rotateX(90deg) rotateZ(90deg);
+    opacity: 0;
+    height: 0px;
+}        
+ 
+.animate-enter.animate-enter-active,
+.animate-leave {
+    -webkit-transform: rotateX(0deg) rotateZ(0deg);
+    -moz-transform: rotateX(0deg) rotateZ(0deg);
+    -ms-transform: rotateX(0deg) rotateZ(0deg);
+    -o-transform: rotateX(0deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateZ(0deg);
+    opacity: 1;
+    height: 30px;
+}
+
+.animate-show-loading {
+  opacity: 1;
+}
+
+.animate-show-loading.ng-hide-add, .animate-show-loading.ng-hide-remove {
+  transition: all linear 0.1s;
+}
+.animate-show-loading.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+
+/* ***********************************/
+/*
+
+.animate-show {
+  opacity: 1;
+    width:100%;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+*/
+
+
+.animate-repeat {
+  line-height:30px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:30px;
+}

@@ -1,0 +1,896 @@
+/* ! vertical layout */
+.multiSelectDropdownSpanThree .vertical {
+    float: none;        
+}
+
+/* ! horizontal layout */
+.multiSelectDropdownSpanThree .horizontal:not(.multiSelectGroup) {
+    float: left;
+}
+
+/* ! create a "row" */
+.multiSelectDropdownSpanThree .line {
+    padding:  2px 0px 4px 0px;
+    max-height: 30px;   
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+/* ! create a "column" */
+.multiSelectDropdownSpanThree .acol {
+    display: inline-block;    
+    min-width: 12px;
+}
+
+/* ! */
+.multiSelectDropdownSpanThree .inlineBlock {
+    display: inline-block;
+}
+
+/* the multiselect button */
+.multiSelectDropdownSpanThree > button {
+    display: inline-block;
+    position: relative;
+    text-align: center;    
+    width: 180px ;
+    cursor: pointer;
+    border: 1px solid #c6c6c6;    
+    padding: 1px 8px 1px 8px;    
+    font-size: 14px;
+    min-height : 38px !important;
+    border-radius: 4px;
+    color: #555;   
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+    white-space:normal;
+    background-color: #fff;
+    background-image: linear-gradient(#fff, #f7f7f7);      
+}
+
+/* button: hover */
+.multiSelectDropdownSpanThree > button:hover {    
+    background-image: linear-gradient(#fff, #e9e9e9);    
+}
+
+/* button: disabled */
+.multiSelectDropdownSpanThree > button:disabled {
+    background-image: linear-gradient(#fff, #fff);      
+    border: 1px solid #ddd;    
+    color: #999;
+}
+
+/* button: clicked */
+.multiSelectDropdownSpanThree .buttonClicked {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* labels on the button */
+.multiSelectDropdownSpanThree .buttonLabel {
+    display: inline-block;
+    padding: 5px 0px 5px 0px; 
+}
+
+/* downward pointing arrow */
+.multiSelectDropdownSpanThree .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 1px 12px  !important;    
+    vertical-align: middle;
+    border-top: 4px solid #333;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 0 dotted; 
+}
+
+/* the main checkboxes and helper layer */
+.multiSelectDropdownSpanThree .checkboxLayer {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);    
+    min-width:278px;
+    display: none !important;    
+}
+
+/* container of helper elements */
+.multiSelectDropdownSpanThree .helperContainer {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 8px 0px 8px;    
+}
+
+/* helper buttons (select all, none, reset); */
+.multiSelectDropdownSpanThree .helperButton {
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.6;
+    margin: 0px 0px 8px 0px;
+}
+
+.multiSelectDropdownSpanThree .helperButton.reset{
+    float: right;
+}
+
+.multiSelectDropdownSpanThree .helperButton:not( .reset ) {
+    margin-right: 4px;    
+}
+
+/* clear button */
+.multiSelectDropdownSpanThree .clearButton {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 22px;
+    width: 22px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.4;
+    right : 2px;
+    top: 4px;
+}
+
+/* filter */
+.multiSelectDropdownSpanThree .inputFilter {
+    border-radius: 2px; 
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 14px;
+    width:100%;    
+    padding-left:7px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */    
+    color: #888;
+    margin: 0px 0px 8px 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+/* helper elements on hover & focus */
+.multiSelectDropdownSpanThree .clearButton:hover,
+.multiSelectDropdownSpanThree .helperButton:hover {
+    border: 1px solid #ccc;
+    color: #999;    
+    background-color: #f4f4f4;    
+}
+.multiSelectDropdownSpanThree .helperButton:disabled {
+    color: #ccc;    
+    border: 1px solid #ddd;
+}
+
+.multiSelectDropdownSpanThree .clearButton:focus,
+.multiSelectDropdownSpanThree .helperButton:focus,
+.multiSelectDropdownSpanThree .inputFilter:focus {
+    border: 1px solid #66AFE9 !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+            box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+}
+
+/* container of multi select items */
+.multiSelectDropdownSpanThree .checkBoxContainer {
+    display: block;
+    padding: 8px;   
+    overflow: hidden;
+}
+
+/* ! to show / hide the checkbox layer above */
+.multiSelectDropdownSpanThree .show {
+    display: block !important;
+}
+
+/* item labels */
+.multiSelectDropdownSpanThree .multiSelectItem {
+    display: block;
+    padding: 3px;
+    color: #444;       
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;      
+    border: 1px solid transparent;
+    position: relative;
+    min-width:278px;    
+    min-height: 32px;    
+}
+
+/* Styling on selected items */
+.multiSelectDropdownSpanThree .multiSelectItem:not(.multiSelectGroup).selected
+{
+    background-image: linear-gradient( #e9e9e9, #f1f1f1 );    
+    color: #555;        
+    cursor: pointer;        
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;    
+    border-right: 1px solid #d9d9d9;            
+}
+
+.multiSelectDropdownSpanThree .multiSelectItem .acol label {
+    display: inline-block;
+    padding-right: 30px;    
+    margin: 0px;
+    font-weight: normal;    
+    line-height: normal;
+}
+
+/* item labels focus on mouse hover */
+.multiSelectDropdownSpanThree .multiSelectItem:hover, 
+.multiSelectDropdownSpanThree .multiSelectGroup:hover {
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* item labels focus using keyboard */
+.multiSelectDropdownSpanThree .multiSelectFocus { 
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* change mouse pointer into the pointing finger */
+.multiSelectDropdownSpanThree .multiSelectItem span:hover, 
+.multiSelectDropdownSpanThree .multiSelectGroup span:hover
+{    
+    cursor: pointer;  
+}
+
+/* ! group labels */
+.multiSelectDropdownSpanThree .multiSelectGroup {    
+    display: block;
+    clear: both;
+}
+
+/* right-align the tick mark (&#10004;) */
+.multiSelectDropdownSpanThree .tickMark {
+    display:inline-block; 
+    position: absolute; 
+    right: 10px; 
+    top: 7px;
+    font-size: 10px;          
+}
+
+/* hide the original HTML checkbox away */
+.multiSelectDropdownSpanThree .checkbox {    
+    color: #ddd !important;    
+    position: absolute;
+    left: -9999px;
+    cursor: pointer;    
+}
+
+/* checkboxes currently disabled */
+.multiSelectDropdownSpanThree .disabled, 
+.multiSelectDropdownSpanThree .disabled:hover,
+.multiSelectDropdownSpanThree .disabled label input:hover ~ span {
+    color: #c4c4c4 !important;
+    cursor: not-allowed !important;
+}
+
+/* If you use images in button / checkbox label, you might want to change the image style here. */
+.multiSelectDropdownSpanThree img {
+    vertical-align: middle;
+    margin-bottom:0px;
+    max-height: 22px;
+    max-width:22px;
+}
+
+
+/* Multi Select Dropdown Five - Span */
+
+/* ! vertical layout */
+.multiSelectDropdownSpanFive .vertical {
+    float: none;        
+}
+
+/* ! horizontal layout */
+.multiSelectDropdownSpanFive .horizontal:not(.multiSelectGroup) {
+    float: left;
+}
+
+/* ! create a "row" */
+.multiSelectDropdownSpanFive .line {
+    padding:  2px 0px 4px 0px;
+    max-height: 30px;   
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+/* ! create a "column" */
+.multiSelectDropdownSpanFive .acol {
+    display: inline-block;    
+    min-width: 12px;
+}
+
+/* ! */
+.multiSelectDropdownSpanFive .inlineBlock {
+    display: inline-block;
+}
+
+/* the multiselect button */
+.multiSelectDropdownSpanFive > button {
+    display: inline-block;
+    position: relative;
+    text-align: center;    
+    width: 280px ;
+    cursor: pointer;
+    border: 1px solid #c6c6c6;    
+    padding: 1px 8px 1px 8px;    
+    font-size: 14px;
+    min-height : 38px !important;
+    border-radius: 4px;
+    color: #555;   
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+    white-space:normal;
+    background-color: #fff;
+    background-image: linear-gradient(#fff, #f7f7f7);      
+}
+
+/* button: hover */
+.multiSelectDropdownSpanFive > button:hover {    
+    background-image: linear-gradient(#fff, #e9e9e9);    
+}
+
+/* button: disabled */
+.multiSelectDropdownSpanFive > button:disabled {
+    background-image: linear-gradient(#fff, #fff);      
+    border: 1px solid #ddd;    
+    color: #999;
+}
+
+/* button: clicked */
+.multiSelectDropdownSpanFive .buttonClicked {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* labels on the button */
+.multiSelectDropdownSpanFive .buttonLabel {
+    display: inline-block;
+    padding: 5px 0px 5px 0px; 
+}
+
+/* downward pointing arrow */
+.multiSelectDropdownSpanFive .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 1px 12px  !important;    
+    vertical-align: middle;
+    border-top: 4px solid #333;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 0 dotted; 
+}
+
+/* the main checkboxes and helper layer */
+.multiSelectDropdownSpanFive .checkboxLayer {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);    
+    min-width:278px;
+    display: none !important;    
+}
+
+/* container of helper elements */
+.multiSelectDropdownSpanFive .helperContainer {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 8px 0px 8px;    
+}
+
+/* helper buttons (select all, none, reset); */
+.multiSelectDropdownSpanFive .helperButton {
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.6;
+    margin: 0px 0px 8px 0px;
+}
+
+.multiSelectDropdownSpanFive .helperButton.reset{
+    float: right;
+}
+
+.multiSelectDropdownSpanFive .helperButton:not( .reset ) {
+    margin-right: 4px;    
+}
+
+/* clear button */
+.multiSelectDropdownSpanFive .clearButton {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 22px;
+    width: 22px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.4;
+    right : 2px;
+    top: 4px;
+}
+
+/* filter */
+.multiSelectDropdownSpanFive .inputFilter {
+    border-radius: 2px; 
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 14px;
+    width:100%;    
+    padding-left:7px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */    
+    color: #888;
+    margin: 0px 0px 8px 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+/* helper elements on hover & focus */
+.multiSelectDropdownSpanFive .clearButton:hover,
+.multiSelectDropdownSpanFive .helperButton:hover {
+    border: 1px solid #ccc;
+    color: #999;    
+    background-color: #f4f4f4;    
+}
+.multiSelectDropdownSpanFive .helperButton:disabled {
+    color: #ccc;    
+    border: 1px solid #ddd;
+}
+
+.multiSelectDropdownSpanFive .clearButton:focus,
+.multiSelectDropdownSpanFive .helperButton:focus,
+.multiSelectDropdownSpanFive .inputFilter:focus {
+    border: 1px solid #66AFE9 !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+            box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+}
+
+/* container of multi select items */
+.multiSelectDropdownSpanFive .checkBoxContainer {
+    display: block;
+    padding: 8px;   
+    overflow: hidden;
+}
+
+/* ! to show / hide the checkbox layer above */
+.multiSelectDropdownSpanFive .show {
+    display: block !important;
+}
+
+/* item labels */
+.multiSelectDropdownSpanFive .multiSelectItem {
+    display: block;
+    padding: 3px;
+    color: #444;       
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;      
+    border: 1px solid transparent;
+    position: relative;
+    min-width:278px;    
+    min-height: 32px;    
+}
+
+/* Styling on selected items */
+.multiSelectDropdownSpanFive .multiSelectItem:not(.multiSelectGroup).selected
+{
+    background-image: linear-gradient( #e9e9e9, #f1f1f1 );    
+    color: #555;        
+    cursor: pointer;        
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;    
+    border-right: 1px solid #d9d9d9;            
+}
+
+.multiSelectDropdownSpanFive .multiSelectItem .acol label {
+    display: inline-block;
+    padding-right: 30px;    
+    margin: 0px;
+    font-weight: normal;    
+    line-height: normal;
+}
+
+/* item labels focus on mouse hover */
+.multiSelectDropdownSpanFive .multiSelectItem:hover, 
+.multiSelectDropdownSpanFive .multiSelectGroup:hover {
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* item labels focus using keyboard */
+.multiSelectDropdownSpanFive .multiSelectFocus { 
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* change mouse pointer into the pointing finger */
+.multiSelectDropdownSpanFive .multiSelectItem span:hover, 
+.multiSelectDropdownSpanFive .multiSelectGroup span:hover
+{    
+    cursor: pointer;  
+}
+
+/* ! group labels */
+.multiSelectDropdownSpanFive .multiSelectGroup {    
+    display: block;
+    clear: both;
+}
+
+/* right-align the tick mark (&#10004;) */
+.multiSelectDropdownSpanFive .tickMark {
+    display:inline-block; 
+    position: absolute; 
+    right: 10px; 
+    top: 7px;
+    font-size: 10px;          
+}
+
+/* hide the original HTML checkbox away */
+.multiSelectDropdownSpanFive .checkbox {    
+    color: #ddd !important;    
+    position: absolute;
+    left: -9999px;
+    cursor: pointer;    
+}
+
+/* checkboxes currently disabled */
+.multiSelectDropdownSpanFive .disabled, 
+.multiSelectDropdownSpanFive .disabled:hover,
+.multiSelectDropdownSpanFive .disabled label input:hover ~ span {
+    color: #c4c4c4 !important;
+    cursor: not-allowed !important;
+}
+
+/* If you use images in button / checkbox label, you might want to change the image style here. */
+.multiSelectDropdownSpanFive img {
+    vertical-align: middle;
+    margin-bottom:0px;
+    max-height: 22px;
+    max-width:22px;
+}
+
+
+/*Multi Select Dropdown Six - Span*/
+
+/* ! vertical layout */
+.multiSelectDropdownSpanSix .vertical {
+    float: none;        
+}
+
+/* ! horizontal layout */
+.multiSelectDropdownSpanSix .horizontal:not(.multiSelectGroup) {
+    float: left;
+}
+
+/* ! create a "row" */
+.multiSelectDropdownSpanSix .line {
+    padding:  2px 0px 4px 0px;
+    max-height: 30px;   
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+/* ! create a "column" */
+.multiSelectDropdownSpanSix .acol {
+    display: inline-block;    
+    min-width: 12px;
+}
+
+/* ! */
+.multiSelectDropdownSpanSix .inlineBlock {
+    display: inline-block;
+}
+
+/* the multiselect button */
+.multiSelectDropdownSpanSix > button {
+    display: inline-block;
+    position: relative;
+    text-align: center;    
+    width: 400px ;
+    cursor: pointer;
+    border: 1px solid #c6c6c6;    
+    padding: 1px 8px 1px 8px;    
+    font-size: 14px;
+    min-height : 38px !important;
+    border-radius: 4px;
+    color: #555;   
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+    white-space:normal;
+    background-color: #fff;
+    background-image: linear-gradient(#fff, #f7f7f7);      
+}
+
+/* button: hover */
+.multiSelectDropdownSpanSix > button:hover {    
+    background-image: linear-gradient(#fff, #e9e9e9);    
+}
+
+/* button: disabled */
+.multiSelectDropdownSpanSix > button:disabled {
+    background-image: linear-gradient(#fff, #fff);      
+    border: 1px solid #ddd;    
+    color: #999;
+}
+
+/* button: clicked */
+.multiSelectDropdownSpanSix .buttonClicked {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* labels on the button */
+.multiSelectDropdownSpanSix .buttonLabel {
+    display: inline-block;
+    padding: 5px 0px 5px 0px; 
+}
+
+/* downward pointing arrow */
+.multiSelectDropdownSpanSix .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 1px 12px  !important;    
+    vertical-align: middle;
+    border-top: 4px solid #333;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 0 dotted; 
+}
+
+/* the main checkboxes and helper layer */
+.multiSelectDropdownSpanSix .checkboxLayer {
+    background-color: #fff;
+    position: absolute;
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);    
+    min-width:278px;
+    display: none !important;    
+}
+
+/* container of helper elements */
+.multiSelectDropdownSpanSix .helperContainer {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 8px 0px 8px;    
+}
+
+/* helper buttons (select all, none, reset); */
+.multiSelectDropdownSpanSix .helperButton {
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.6;
+    margin: 0px 0px 8px 0px;
+}
+
+.multiSelectDropdownSpanSix .helperButton.reset{
+    float: right;
+}
+
+.multiSelectDropdownSpanSix .helperButton:not( .reset ) {
+    margin-right: 4px;    
+}
+
+/* clear button */
+.multiSelectDropdownSpanSix .clearButton {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 22px;
+    width: 22px;
+    font-size: 13px;
+    border-radius: 2px;
+    color: #666;    
+    background-color: #f1f1f1;
+    line-height: 1.4;
+    right : 2px;
+    top: 4px;
+}
+
+/* filter */
+.multiSelectDropdownSpanSix .inputFilter {
+    border-radius: 2px; 
+    border: 1px solid #ccc;
+    height: 26px;
+    font-size: 14px;
+    width:100%;    
+    padding-left:7px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */    
+    color: #888;
+    margin: 0px 0px 8px 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+/* helper elements on hover & focus */
+.multiSelectDropdownSpanSix .clearButton:hover,
+.multiSelectDropdownSpanSix .helperButton:hover {
+    border: 1px solid #ccc;
+    color: #999;    
+    background-color: #f4f4f4;    
+}
+.multiSelectDropdownSpanSix .helperButton:disabled {
+    color: #ccc;    
+    border: 1px solid #ddd;
+}
+
+.multiSelectDropdownSpanSix .clearButton:focus,
+.multiSelectDropdownSpanSix .helperButton:focus,
+.multiSelectDropdownSpanSix .inputFilter:focus {
+    border: 1px solid #66AFE9 !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+            box-shadow: inset 0 0 1px rgba(0,0,0,.065), 0 0 5px rgba(102, 175, 233, .6) !important;
+}
+
+/* container of multi select items */
+.multiSelectDropdownSpanSix .checkBoxContainer {
+    display: block;
+    padding: 8px;   
+    overflow: hidden;
+}
+
+/* ! to show / hide the checkbox layer above */
+.multiSelectDropdownSpanSix .show {
+    display: block !important;
+}
+
+/* item labels */
+.multiSelectDropdownSpanSix .multiSelectItem {
+    display: block;
+    padding: 3px;
+    color: #444;       
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;      
+    border: 1px solid transparent;
+    position: relative;
+    min-width:278px;    
+    min-height: 32px;    
+}
+
+/* Styling on selected items */
+.multiSelectDropdownSpanSix .multiSelectItem:not(.multiSelectGroup).selected
+{
+    background-image: linear-gradient( #e9e9e9, #f1f1f1 );    
+    color: #555;        
+    cursor: pointer;        
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;    
+    border-right: 1px solid #d9d9d9;            
+}
+
+.multiSelectDropdownSpanSix .multiSelectItem .acol label {
+    display: inline-block;
+    padding-right: 30px;    
+    margin: 0px;
+    font-weight: normal;    
+    line-height: normal;
+}
+
+/* item labels focus on mouse hover */
+.multiSelectDropdownSpanSix .multiSelectItem:hover, 
+.multiSelectDropdownSpanSix .multiSelectGroup:hover {
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* item labels focus using keyboard */
+.multiSelectDropdownSpanSix .multiSelectFocus { 
+    background-image: linear-gradient( #c1c1c1, #999 ) !important;    
+    color: #fff !important;    
+    cursor: pointer;        
+    border: 1px solid #ccc !important;
+}
+
+/* change mouse pointer into the pointing finger */
+.multiSelectDropdownSpanSix .multiSelectItem span:hover, 
+.multiSelectDropdownSpanSix .multiSelectGroup span:hover
+{    
+    cursor: pointer;  
+}
+
+/* ! group labels */
+.multiSelectDropdownSpanSix .multiSelectGroup {    
+    display: block;
+    clear: both;
+}
+
+/* right-align the tick mark (&#10004;) */
+.multiSelectDropdownSpanSix .tickMark {
+    display:inline-block; 
+    position: absolute; 
+    right: 10px; 
+    top: 7px;
+    font-size: 10px;          
+}
+
+/* hide the original HTML checkbox away */
+.multiSelectDropdownSpanSix .checkbox {    
+    color: #ddd !important;    
+    position: absolute;
+    left: -9999px;
+    cursor: pointer;    
+}
+
+/* checkboxes currently disabled */
+.multiSelectDropdownSpanSix .disabled, 
+.multiSelectDropdownSpanSix .disabled:hover,
+.multiSelectDropdownSpanSix .disabled label input:hover ~ span {
+    color: #c4c4c4 !important;
+    cursor: not-allowed !important;
+}
+
+/* If you use images in button / checkbox label, you might want to change the image style here. */
+.multiSelectDropdownSpanSix img {
+    vertical-align: middle;
+    margin-bottom:0px;
+    max-height: 22px;
+    max-width:22px;
+}
