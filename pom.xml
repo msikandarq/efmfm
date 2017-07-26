@@ -39,16 +39,16 @@
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		
-		
+
+
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context-support</artifactId>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
-</dependency>
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -267,34 +267,34 @@
 			<version>0.7.0</version>
 		</dependency>
 		<dependency>
-	<groupId>com.google.zxing</groupId>
-	<artifactId>core</artifactId>
-	<version>2.2</version>
-</dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>2.2</version>
+		</dependency>
 
-<dependency>
-	<groupId>com.google.zxing</groupId>
-	<artifactId>javase</artifactId>
-	<version>2.2</version>
-</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>2.2</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
- <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>javax.mail-api</artifactId>
-            <version>1.5.5</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.23</version>
-        </dependency>
-        
+		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.5</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+
 	</dependencies>
 	<modules>
 		<module>eFmFmFleetBusiness</module>
@@ -314,6 +314,13 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>javancss-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+			</plugins>
 		</plugins>
 	</build>
 	<repositories>
